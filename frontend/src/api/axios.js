@@ -1,17 +1,17 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // Adjust to your actual backend URL (e.g. Render/Localhost)
+  baseURL: "https://threew-task-social.onrender.com/api", // Adjust to your actual backend URL (e.g. Render/Localhost)
 });
 
 // Interceptor to add Token to every request
 API.interceptors.request.use((req) => {
   const user = JSON.parse(localStorage.getItem("user"));
-  
+
   if (user?.token) {
     req.headers.Authorization = `Bearer ${user.token}`;
   }
-  
+
   return req;
 });
 
