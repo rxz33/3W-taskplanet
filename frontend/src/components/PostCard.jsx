@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardContent, CardActions, CardMedia, Avatar, Typography, IconButton, Box } from "@mui/material";
 import { Favorite, FavoriteBorder, ChatBubbleOutline, DeleteOutline } from "@mui/icons-material";
-import API from "../api/axios";
+import API, { BASE_URL } from "../api/axios";
 
 function PostCard({ post, onUpdate }) {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -66,7 +66,7 @@ function PostCard({ post, onUpdate }) {
         <CardMedia
           component="img"
           height="300"
-          image={post.image.startsWith("http") ? post.image : `http://localhost:5000/uploads/${post.image}`}
+          image={post.image.startsWith("http") ? post.image : `${BASE_URL}/uploads/${post.image}`}
           alt="Post image"
           sx={{ objectFit: "cover" }}
         />

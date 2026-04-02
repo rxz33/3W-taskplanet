@@ -1,7 +1,9 @@
 import axios from "axios";
 
+export const BASE_URL = "https://threew-task-social.onrender.com";
+
 const API = axios.create({
-  baseURL: "https://threew-task-social.onrender.com/api", // Adjust to your actual backend URL (e.g. Render/Localhost)
+  baseURL: `${BASE_URL}/api`,
 });
 
 // Interceptor to add Token to every request
