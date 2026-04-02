@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post("/", createPost);
 router.get("/", getPosts);
-router.put("/:id/like", likePost);
-router.put("/:id/comment", commentPost);
+router.patch("/:id/like", likePost);
+router.patch("/:id/comment", commentPost);
 
 export default router;
